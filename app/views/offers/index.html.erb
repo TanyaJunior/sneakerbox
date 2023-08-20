@@ -1,0 +1,49 @@
+<h1 class="offers-title">YOUR OFFERS</h1>
+<div class="container mb-5">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="made-tab" data-bs-toggle="tab" data-bs-target="#made" type="button" role="tab" aria-controls="made" aria-selected="true">Offers Made</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="receieved-tab" data-bs-toggle="tab" data-bs-target="#received" type="button" role="tab" aria-controls="received" aria-selected="false">Offers Receieved</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="made" role="tabpanel" aria-labelledby="made-tab">
+      <div>
+        <% @made_offers.each do |offer| %>
+          <div class="offer-card">
+            <% if offer.sneaker.photo.attached? %>
+              <%= cl_image_tag offer.sneaker.photo.key %>
+            <% else %>
+              <img src="https://cdn.midjourney.com/e8650f0c-0fcd-494d-a729-8495c1a8b2a1/0_3.png" />
+            <% end %>
+            <div class="offer-card-info">
+              <h4><%= link_to "#{offer.sneaker.title}", offer_path(offer) %></h4>
+              <p>Offer price: <%= offer.offer_price %></p>
+              <p>Status: <%= offer.status %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="received" role="tabpanel" aria-labelledby="received-tab">
+      <div>
+        <% @received_offers.each do |offer| %>
+          <div class="offer-card">
+            <% if offer.sneaker.photo.attached? %>
+              <%= cl_image_tag offer.sneaker.photo.key %>
+            <% else %>
+              <img src="https://cdn.midjourney.com/e8650f0c-0fcd-494d-a729-8495c1a8b2a1/0_3.png" />
+            <% end %>
+            <div class="offer-card-info">
+              <h4><%= link_to "#{offer.sneaker.title}", offer_path(offer) %></h4>
+              <p>Offer price:<%= offer.offer_price %></p>
+              <p>Status:<%= offer.status %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

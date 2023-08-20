@@ -1,2 +1,90 @@
-// Import page-specific CSS files here.
 @import "home";
+.card {
+  border-radius: 0; /* Remove border radius */
+  box-shadow: none; /* Remove box shadow */
+  background-color: #f8f9fa;
+  transition: transform 0.3s ease;
+}
+.card-container:hover {
+  transform: translateZ(20px);
+}
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card-category{
+  text-align: center;
+    padding-top: 138px;
+    font-family: "satoshi";
+    font-size: 32px;
+    color: white;
+}
+.cards a{
+  text-decoration: none;
+  color:white;
+}
+
+.first-card {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dw1yozuyk/image/upload/v1691783119/WhatsApp_Image_2023-08-11_at_21.42.43_knweys.jpg);
+  background-size: cover;
+  padding: 100px;
+  background-size: cover;
+  padding: 100px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-family: supreme;
+  font-size: 24px;
+}
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 330px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+/* Apply styles to the entire page for Firefox */
+body {
+  scrollbar-width: thin; /* Width of the scrollbar */
+}
+
+/* Apply styles to the scrollbar thumb for Firefox */
+body::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 6px;
+}
+
+/* Apply styles to the scrollbar track for Firefox */
+body::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}

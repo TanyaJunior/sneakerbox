@@ -1,0 +1,32 @@
+  <h1 style="text-align:center; padding:30px;"><%= @sneaker.model %></h1>
+<div class="show-card">
+  <%= cl_image_tag @sneaker.photo.key, class:'show-card-img'%>
+  <div class="card-info">
+    <h3>R<%= @sneaker.price %></h3>
+    <p>UK Size  <%= @sneaker.size %></p>
+    <% if @sneaker.status = 0 %>
+      <%= "Available" %>
+      <% else %>
+      <%= "taken" %>
+    <% end %>
+   <div class="button-card">
+    <%= button_to "Add to Cart", add_to_cart_sneaker_path(@sneaker), method: :post, remote: true , class:"add-to-cart-btn"%>
+    <% if current_user.cart && current_user.cart.cart_items.exists?(sneaker: @sneaker) %>
+      <%= button_to "Remove", cart_item_path(current_user.cart.cart_items.find_by(sneaker: @sneaker)), method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
+
+   </div>
+  </div>
+   </div>
+  </div>
+</div>
+<!-- app/views/sneakers/show.html.erb -->
+<!-- app/views/carts/show.html.erb -->
+
+
+
+<!-- app/views/layouts/application.html.erb -->
+  <!-- Other navigation elements -->
+
+
+

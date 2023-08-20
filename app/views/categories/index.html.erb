@@ -1,0 +1,8 @@
+  <h2 style="text-align:center;font-family: inherit;">Sneaker Categories</h2>
+    <% @sneakers_by_brand.each do |brand, sneakers| %>
+      <%= link_to brand_sneakers_path(brand), class: 'category-link' do %>
+        <div class="category-card">
+          <h2 style="text-align:center;font-family: math;"><%= brand %></h2>
+      <% end %>
+  </div>
+    <% end %>

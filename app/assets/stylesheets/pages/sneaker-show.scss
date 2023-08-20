@@ -1,0 +1,38 @@
+.show-card{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 100px;
+}
+
+.show-card-img{
+  width: 35%;
+}
+.show-card-button{
+  background-color: #3b2758;
+  padding: 10px 70px 10px 70px;
+  margin-top: 35px;
+}
+
+.show-card-button a{
+  text-decoration: none;
+  color: white;
+}
+.card-info{
+}
+.add-to-cart-btn{
+  padding: 8px 16px;
+  background-color: #5320CE;
+  color:white;
+}
+.category-link{
+   margin:30px;
+   color: #3b2758;
+   text-decoration: none;
+}
+.category-card{
+  border: 0px;
+  background-color: #f4f4f4;
+  transition: transform 0.3s ease;
+  margin: 5px;
+}

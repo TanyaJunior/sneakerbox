@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="top-three-images">
+    <img src="https://res.cloudinary.com/dw1yozuyk/image/upload/v1691692756/basketball_court_wuv3ma.jpg" alt="image">
+    <img src="https://res.cloudinary.com/dw1yozuyk/image/upload/v1691696961/244516f83307d916011e0556739c72b1_gievjn.jpg" alt="image">
+    <img src="https://res.cloudinary.com/dw1yozuyk/image/upload/v1691696672/OAMC_and_adidas_Introduce_New_Type_O-9_Sneaker_wnvnc6.png" alt="">
+
+   </div>
+  <div class="recent">
+    <h1>Just Dropped</h1>
+  </div>
+  <!-- app/views/sneakers/index.html.erb -->
+<div class="card-container">
+  <% @sneakers.each do |sneaker| %>
+    <%= link_to sneaker_path(sneaker), class: 'show-details-link' do %>
+      <div class="card">
+           <%= cl_image_tag sneaker.photo.key %>
+        <div class="card-infos">
+          <div>
+            <h2><%= sneaker.title %></h2>
+            <h2><%= sneaker.brand %></h2>
+            <p><%= sneaker.model %></p>
+          </div>
+          <h2 class="card-price">R<%= sneaker.price %></h2>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<%# <div class="card-container">
+  <div class="card-container">
+  <% @sneakers_by_brand.each do |brand, sneakers| %>
+      <%# <%= link_to(categories_path, class: "first-card") do %>
+    <%# <% if brand == "Adidas" %>
+      <%# <h2><%= brand %>
+        <%# <div class="card"> %>
+          <%# <!-- Content of the card --> %>
+        <%# </div> %>
+      <%# <% end %>
+    <%# <% end %>
+  <%# <% end %>
+<%# </div> %>
+
+
+      <br>
+      <br>
+      <hr>
+</div>

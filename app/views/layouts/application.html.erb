@@ -5,12 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://api.fontshare.com/v2/css?f[]=supreme@2,400,1&f[]=satoshi@900,700,500,701,300,400&f[]=zina@400&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=supreme@2,400,1&f[]=satoshi@900,700,500,701,300,400&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+<%= javascript_include_tag "application", defer: true %>
   </head>
-
   <body>
+<% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
+ <%= render 'shared/navbar' %>
+  <% end %>
+  <%= render "shared/flashes" %>
     <%= yield %>
+  <% if current_page?(root_path) || current_page?(sneakers_path)%>
+    <%= render 'shared/footer' %>
+   <% end %>
   </body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbarCollapse = document.querySelector("#navbarSupportedContent");
+    const navbarToggler = document.querySelector("#navbarToggler");
+
+    navbarToggler.addEventListener("click", function () {
+      if (navbarCollapse.style.display === "none" || navbarCollapse.style.display === "") {
+        navbarCollapse.style.display = "flex";
+      } else {
+        navbarCollapse.style.display = "none";
+      }
+    });
+  });
+</script>
 </html>

@@ -1,0 +1,65 @@
+      <% if user_signed_in? %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "https://res.cloudinary.com/dw1yozuyk/image/upload/v1691699393/download_10_odqjl7.jpg" %>
+    <% end %>
+
+ <button class="navbar-toggler" id="navbarToggler">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse" id="navbarSupportedContent">
+       <ul class="navbar-nav ">
+        <li class="nav-item active">
+            <%= link_to "Home", root_path, class: "nav-link" %>
+        </li>
+
+          <li class="nav-item">
+            <%= link_to "Footwear", categories_path, class: "nav-link" %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "Sell", new_sneaker_path, class: "nav-link" %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to 'Sales', sales_path,  class: "nav-link" %>
+          </li>
+
+          <li class="nav-item">
+           <%= link_to "Magazine", sneaker_magazine_path, class: "nav-link" %>
+          </li>
+
+           <% if user_signed_in? %>
+         <li class="cart-counter nav-item">
+         <%= link_to cart_path do %>
+           <%= current_user.cart.cart_items.sum :quantity rescue 0 %>
+          <% end %>
+         </li>
+         <% end %>
+
+           <li class="nav-item dropdown">
+     <% if current_user.profile %>
+     <%= cl_image_tag 'your_public_id', class: 'avatar dropdown-toggle', id: 'navbarDropdown', data: { bs_toggle: 'dropdown' }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <% else %>
+      <%= image_tag 'https://res.cloudinary.com/dw1yozuyk/image/upload/v1692281101/WhatsApp_Image_2023-08-17_at_16.04.35_jkx4lp.jpg', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <% end %>
+     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+      <%# <%= link_to "Action", "#", class: "dropdown-item" %>
+      <%# <%= link_to "Another action", "#", class: "dropdown-item" %>
+      <!-- Add more dropdown items as needed -->
+    </div>
+</li>
+
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+

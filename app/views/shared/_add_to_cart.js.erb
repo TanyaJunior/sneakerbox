@@ -1,0 +1,11 @@
+var cartCount = <%= current_user.cart.cart_items.sum(:quantity) %>;
+$('#cart-count').text(cartCount);
+
+// app/assets/javascripts/cart.js
+document.addEventListener('DOMContentLoaded', function() {
+  // Update cart count using JavaScript
+  var cartCountElement = document.getElementById('cart-count');
+  var cartCount = <%= current_user.cart.cart_items.sum(:quantity) %>;
+  cartCountElement.textContent = cartCount;
+});
+

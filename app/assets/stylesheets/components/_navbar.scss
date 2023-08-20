@@ -10,3 +10,95 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-brand{
+  margin-right: 199px;
+}
+
+.navbar-collapse {
+  flex-grow: 0;
+  padding: 8px;
+  justify-content: space-between;
+  word-spacing: 17px;
+  gap: 18px;
+}
+
+.navbar-expand-sm .navbar-nav {
+    flex-direction: row;
+    gap: 90px;
+}
+.home-items{
+  display:inline;
+}
+.dropdown, .dropstart, .dropup-center, .dropdown-center {
+  position: relative;
+  margin: 9px;
+}
+
+.dropdown ul{
+    display: inline;
+    display: none;
+}
+.dropdown ul:hover{
+  display: inline;
+}
+
+/* Media queries for mobile */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  .navbar-lewagon {
+    padding: 10px;
+  }
+
+  .navbar-brand {
+    margin: 10px auto; /* Center the logo */
+  }
+
+  .navbar-toggler {
+    display: block; /* Display the toggle button for mobile */
+    position: relative; /* Add relative positioning */
+  }
+
+  .navbar-toggler .navbar-toggler-icon {
+    position: absolute; /* Position the icon absolutely */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the icon */
+  }
+
+  .navbar-toggler[aria-expanded="true"] + .navbar-collapse {
+    display: block; /* Display the navigation links when the toggle is active */
+  }
+
+  .navbar-nav {
+    align-items: center; /* Center-align links */
+  }
+
+  .navbar-nav .nav-item {
+    margin: 5px 0;
+  }
+
+  .navbar-expand-sm .navbar-nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .me-auto {
+    margin-right: 0px;
+}
+.navbar-expand-sm .navbar-nav {
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+}

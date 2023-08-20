@@ -1,0 +1,14 @@
+<!-- app/views/carts/show.html.erb -->
+<h1>Cart</h1>
+
+<% if @cart_items.any? %>
+      <% @cart_items.each do |cart_item| %>
+         <p> <%= cart_item.sneaker.model %></p>
+          <p>quantity <%= cart_item.quantity %></p>
+          <p>Price <%= cart_item.sneaker.price %></p>
+        <p>Total <%= cart_item.sneaker.price * cart_item.quantity %></p>
+      <% end %>
+  <p>Total Price: <%= @cart_items.sum { |cart_item| cart_item.sneaker.price * cart_item.quantity } %></p>
+<% else %>
+  <p>Your cart is empty.</p>
+<% end %>

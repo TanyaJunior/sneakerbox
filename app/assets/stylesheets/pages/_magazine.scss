@@ -1,0 +1,78 @@
+.nike-image img{
+  padding: 20px;
+  width: 33%;
+}
+.magazine-info{
+ margin: 0 auto;
+ text-align: center;
+}
+.magazine-header {
+  background-image: url('https://res.cloudinary.com/dw1yozuyk/image/upload/v1692301381/jelleke-vanooteghem-gnxb59lGU1M-unsplash_lhuuv9.jpg');
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* No repeating of the image */
+  /* Other styles for the container */
+  width: 100%;
+  height: 90vh; /* Set the height to full viewport height */
+  color: white; /* Text color on top of the background */
+  padding: 100px;
+}
+.magazine-header h1{
+  font-family: system-ui;
+  font-size: 82px;
+  font-weight: 900;
+  color:black;
+}
+.magazine-info img{
+  position: absolute;
+  top: 0;
+  right: 0px;
+}
+.magazine-info p{
+  font-family: inherit;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+}
+
+.nike-section h1{
+  font-family: system-ui;
+  font-size: 100px;
+  font-weight: 900;
+  color: black;
+  padding-left: 270px;
+  margin-top: 30px;
+}
+.nike-image img{
+  padding: 0px;
+  width: 45%;
+  align-items: initial;
+  justify-content: normal;
+  position: absolute;
+  right: 0;
+}
+.nike-image p{
+  display: inline-flex;
+  padding: 20px;
+  margin-top: 15%;
+  width: 55%;
+  text-align: center;
+  font-family: ui-sans-serif;
+  font-size: x-large;
+}
+.three img{
+ width:30%;
+ padding: 2px;
+}
+.three{
+  width: 99%;
+  border: 1px black solid;
+  margin-top: 20%;
+  display: flex;
+  margin-left: 9px;
+}
+.info{
+  text-align: center;
+  padding: 40px;
+  margin-top: 122px;
+}
